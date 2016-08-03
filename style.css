@@ -1,0 +1,42 @@
+body {
+  margin: 0px;
+  padding: 0px;
+
+  background-color: #111;
+
+  overflow: hidden;
+}
+
+canvas {
+  position: absolute;
+
+  width: calc(100vw);
+  height: calc(100vh);
+}
+
+ul {
+  position: absolute;
+
+  padding: 0px;
+  margin: 10px;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li a {
+  color: white;
+
+  font-family: monospace;
+
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+a:hover {
+  color: lightgray;
+}
