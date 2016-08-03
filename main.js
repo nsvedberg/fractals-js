@@ -1,13 +1,14 @@
 var fractals = [];
 
 window.onload = function(){
-    var visibleFractal = fractalUMCTriangle;
+    var visibleFractal = fractalKochSnowflake;
 
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
 
     function redraw() {
         context.clearRect(0, 0, canvas.width, canvas.height);
+
         visibleFractal.draw(context, canvas.width, canvas.height);
     }
 

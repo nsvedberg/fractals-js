@@ -1,10 +1,10 @@
 var fractalUMCTriangle = {
     name: "Uniform Mass Center Triangle",
     draw: function(context, canvasWidth, canvasHeight) {
-        var maxIterations = 6;
+        var maxIterations = 7;
 
         function iterate(points, iterations) {
-            if (iterations > maxIterations) {
+            if (iterations >= maxIterations) {
                 return;
             }
 
@@ -51,8 +51,11 @@ var fractalUMCTriangle = {
         context.lineTo(startX + (width / 2), startY + (width * (Math.sqrt(3)/2)));
         context.closePath();
 
+        context.fillStyle = 'black';
+        context.fill();
+
         context.strokeStyle = 'white';
-        context.stroke()
+        context.stroke();
 
         iterate([
                 {x: startX, y: startY},

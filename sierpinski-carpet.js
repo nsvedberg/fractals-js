@@ -1,8 +1,10 @@
 var fractalSierpinskiCarpet = {
     name: "Sierpinski's Carpet",
     draw: function(context, canvasWidth, canvasHeight) {
+        var maxIterations = 5;
+
         function iterate(startX, startY, width, iterations) {
-            if (iterations <= 0) {
+            if (iterations > maxIterations) {
                 return;
             }
 
@@ -17,13 +19,13 @@ var fractalSierpinskiCarpet = {
                         iterate(startX + ((width / 3) * i),
                                 startY + ((width / 3) * j),
                                 width / 3,
-                                iterations - 1);
+                                iterations + 1);
                     }
                 }
             }
         }
 
-        var width = Math.min(canvasWidth, canvasHeight) - 20;
+        var width = Math.min(canvasWidth, canvasHeight) - 100;
 
         var startX = (canvasWidth / 2) - (width / 2);
         var startY = (canvasHeight / 2) - (width / 2);
@@ -31,7 +33,9 @@ var fractalSierpinskiCarpet = {
         context.fillStyle = 'white';
         context.fillRect(startX, startY, width, width);
 
-        iterate(startX, startY, width, 6);
+        context.beginPath();
+
+        iterate(startX, startY, width, 0);
 
         context.fillStyle = 'black';
         context.fill();
