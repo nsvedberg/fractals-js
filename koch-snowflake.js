@@ -47,6 +47,9 @@ var fractalKochSnowflake = {
                                                    | <- m is the slope of this line
                                             
                                                    |
+                   
+                   All of this is important because the spike might be rotated
+                   to any angle, and we need to calculate the points relatively
                 */
 
                 var midp1 = { x: (line[0].x + line[0].x + line[1].x) / 3

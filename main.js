@@ -14,6 +14,8 @@ window.onload = function(){
 
     var fractalList = document.getElementById('fractal-list');
 
+    fractals.sort(function(a,b){return a.name > b.name});
+
     fractals.forEach(function(fractal){
         var newListItem = document.createElement('li');
         var newLink = document.createElement('a');
